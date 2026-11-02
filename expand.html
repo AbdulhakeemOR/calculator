@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Large keypad calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator calculator--expanded" aria-label="Large keypad calculator">
+    <header class="calculator__header">
+      <div class="calculator-brand"><span class="brand">AOR</span><h1 class="model">Large keypad calculator</h1></div>
+        <span class="power-light" role="img" aria-label="Power on"></span>
+      <div class="calculator__settings">
+        <button type="button" class="calculator__settings-toggle" aria-expanded="false" aria-controls="settings-menu">Settings</button>
+        <div id="settings-menu" class="settings-options" hidden>
+          <button type="button" data-setting="history">Delete this history</button>
+          <button type="button" data-setting="theme">Toggle theme</button>
+          <button type="button" data-setting="sound" aria-pressed="true">Button sound: On</button>
+          <button type="button" data-setting="help">Help &amp; privacy</button>
+        </div>
+      </div>
+    </header>
+    <nav class="calculator__toolbar" aria-label="Calculator modes">
+      <a href="index.html" >Basic</a>
+      <a href="complex.html" >Scientific</a>
+      <a href="exchange.html" >Currency</a>
+      <a href="expand.html" aria-current="page">Large keypad</a>
+    </nav>
+    <p class="hint">Basic calculations with larger buttons and more space for easier tapping.</p>
+      <div class="calculator__screen">
+        <input id="expression" class="calculator__display" type="text" aria-label="Editable equation" placeholder="0" autocomplete="off" spellcheck="false" maxlength="250">
+        <output id="result" class="calculator__result" aria-label="Answer" aria-live="polite"></output>
+      </div>
+      <p id="status" role="status"></p>
+
+    <div class="calculator__keypad ">
+      <div class="calculator__basic-keys">
+        <button type="button" class="key" data-key="mc">mc</button>
+        <button type="button" class="key" data-key="m+">m+</button>
+        <button type="button" class="key" data-key="m-">m-</button>
+        <button type="button" class="key" data-key="mr">mr</button>
+        <button type="button" class="key" data-key="AC">AC</button>
+        <button type="button" class="key" data-key="Clear">Clear</button>
+        <button type="button" class="key" data-key="sign">&plusmn;</button>
+        <button type="button" class="key" data-key="/">&divide;</button>
+        <button type="button" class="key" data-key="7">7</button>
+        <button type="button" class="key" data-key="8">8</button>
+        <button type="button" class="key" data-key="9">9</button>
+        <button type="button" class="key" data-key="*">&times;</button>
+        <button type="button" class="key" data-key="4">4</button>
+        <button type="button" class="key" data-key="5">5</button>
+        <button type="button" class="key" data-key="6">6</button>
+        <button type="button" class="key" data-key="-">&minus;</button>
+        <button type="button" class="key" data-key="1">1</button>
+        <button type="button" class="key" data-key="2">2</button>
+        <button type="button" class="key" data-key="3">3</button>
+        <button type="button" class="key" data-key="+">+</button>
+        <button type="button" class="key" data-key="%">%</button>
+        <button type="button" class="key" data-key="0">0</button>
+        <button type="button" class="key" data-key=".">.</button>
+        <button type="button" class="key" data-key="=">=</button>
+      </div>
+    </div>
+      <footer class="calculator-footer"><span>F&mdash;01</span><span>MADE FOR EVERYDAY IDEAS</span></footer>
+      <details class="history" open>
+        <summary>History</summary>
+        <ol id="history-list"></ol>
+      </details>
+      <dialog id="help">
+        <h2>Help &amp; privacy</h2>
+        <p>Use the keys or your keyboard. Edit the expression to correct any part before pressing Enter or =. Select a history entry to edit and calculate it again. Enter calculates, Backspace deletes, Escape clears. Powers use ^. Functions act on the current number or the most recent parenthesized group. Percent divides that value by 100. Clear deletes one character; AC resets the expression. Memory persists until cleared or this page is closed.</p>
+        <p>Trigonometry starts in degrees; select Deg/Rad to switch. History, theme and sound preferences are saved in this browser when storage is available. Toggle button sounds in Settings. Each calculator mode saves its own history. Delete this history removes only calculations saved in the current mode. Currency rates are fetched automatically from ExchangeRate-API and cached in this browser. All currencies supported by that provider are available. Rates update daily and may differ from your bank. Only the rate request is sent to the provider; your amounts and calculation history stay in this browser.</p>
+        <form method="dialog">
+          <button type="submit">Close</button>
+        </form>
+      </dialog>
+    </main>
+  </body>
+</html>
